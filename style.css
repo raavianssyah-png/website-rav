@@ -16,7 +16,7 @@ body {
     background-size: cover;          
     background-repeat: no-repeat;    
     background-attachment: fixed;    
-    background-position: center center; 
+    background-position: center center;
     
     background-color: #ecf0f1; 
     color: var(--text-color);
@@ -370,6 +370,7 @@ footer {
 }
 
 
+/* --- Media Query untuk Tablet/Desktop (>= 768px) --- */
 @media (min-width: 768px) {
     .profile-card {
         flex-direction: row;
@@ -380,6 +381,51 @@ footer {
 
     .profile-info {
         text-align: left; 
+    }
+}
+
+/* --- Media Query untuk HP (<= 767px) --- */
+@media (max-width: 767px) {
+    .navbar {
+        /* Memastikan navigasi bisa menampung semua menu */
+        flex-direction: column; /* Ubah tata letak menjadi vertikal */
+        align-items: flex-start;
+        padding-bottom: 0.5rem; /* Beri sedikit ruang di bawah */
+        height: auto;
+    }
+
+    .nav-brand {
+        margin-bottom: 0.75rem; /* Jarak antara brand dan menu */
+    }
+
+    .nav-menu {
+        /* Membuat menu vertikal, agar 'Kontak' tidak terpotong */
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        /* Tambahkan warna latar belakang untuk item menu agar mudah dibaca */
+        background-color: rgba(44, 62, 80, 0.9); 
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-menu li a {
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .header {
+        padding: 6rem 1rem; /* Kurangi padding di layar kecil */
+    }
+
+    .header-content h1,
+    .header-content h1 {
+        font-size: 2rem; 
     }
 }
 
@@ -420,73 +466,4 @@ footer {
 
 /* --- Efek Interaktif pada Kartu Profil --- */
 .section#tentang-saya {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer; 
-}
-
-.section#tentang-saya:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
-}
-
-.profile-pic {
-    box-shadow: 0 0 15px rgba(52, 152, 219, 0.7); 
-}
-
-/* --- Gaya untuk Teks di Bagian Tentang Saya --- */
-.profile-info h2 {
-    color: #fff; 
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.8); 
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-}
-
-
-.profile-info p {
-    color: #fff; 
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6); 
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.sorotan {
-    font-style: italic; 
-    color: #000; 
-    font-weight: bold; 
-}
-
-#tentang-saya {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('assets/pemandangan.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* 2. PENDAKIAN TERBARU (Beranda - Bawah) */
-#terbaru {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('assets/awan.jpg');
-    background-size: cover;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-}
-
-#jurnal-blog {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
-    background-size: cover;
-    /* ... */
-}
-
-#galeri-foto {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('assets/bukit.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* 5. HALAMAN KONTAK */
-#kontak-section {
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-/* BARIS INI KOSONG, TIDAK ADA KURUNG KURAWAL TAMBAHAN */
+    transition: transform
