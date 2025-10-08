@@ -307,3 +307,278 @@ a {
 }
 
 .kontak-form button:hover {
+    background-color: #2980b9;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* --- Modal & Lightbox --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 101;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    overflow: auto;
+    text-align: center;
+}
+
+.modal-konten {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    padding: 20px 0;
+}
+
+.modal-tutup {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-tutup:hover,
+.modal-tutup:focus {
+    color: #bbb;
+}
+
+/* --- Animasi Saat Menggulir --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Media Query untuk Tablet/Desktop (>= 768px) --- */
+@media (min-width: 768px) {
+    .profile-card {
+        flex-direction: row;
+        align-items: flex-start; 
+        gap: 3rem; 
+        text-align: left;
+    }
+
+    .profile-info {
+        text-align: left; 
+    }
+}
+
+/* --- Media Query untuk HP (<= 767px) --- */
+@media (max-width: 767px) {
+    /* 1. PERBAIKAN NAVIGASI (Horizontal & Rapat) */
+    .navbar {
+        flex-direction: row; 
+        align-items: center;
+        padding: 1rem 1rem; 
+        height: auto;
+    }
+
+    .nav-brand {
+        font-size: 1.2rem; 
+        margin-right: 0.5rem; 
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row; 
+        gap: 0.5rem; 
+        flex-shrink: 1; 
+        flex-grow: 0;
+    }
+
+    .nav-menu li {
+        width: auto;
+        text-align: center;
+        padding: 0; 
+        background-color: transparent; 
+        border-top: none; 
+    }
+    
+    .nav-menu li a {
+        display: block;
+        padding: 0.5rem 0.25rem; 
+        font-size: 0.8rem; /* Font kecil agar semua menu muat */
+    }
+
+    /* 2. PERBAIKAN HEADER/HERO SECTION */
+    .header {
+        /* Tambahkan padding agar ada jarak dari navigasi di atas */
+        padding: 8rem 1rem 4rem 1rem; 
+        min-height: auto; 
+    }
+
+    .header-content {
+        /* Tambahkan padding agar teks tidak terlalu dekat ke tepi layar */
+        padding: 1rem; 
+    }
+
+    .header-content h1,
+    .header-content h1 {
+        font-size: 2rem; 
+    }
+
+    .header-content p {
+        font-size: 1rem; 
+    }
+
+    /* 3. PERBAIKAN BAGIAN TENTANG SAYA/PROFIL */
+    .section {
+        /* Tambahkan latar belakang solid agar teks mudah dibaca di atas gambar latar belakang body */
+        background-color: rgba(255, 255, 255, 0.95); /* Putih transparan agar background body tetap terlihat samar */
+    }
+
+    .profile-card {
+        /* Pastikan tumpukan konten vertikal */
+        flex-direction: column; 
+        align-items: center; 
+        padding: 10px;
+    }
+
+    .profile-info {
+        /* Paksa teks kembali ke warna default (hitam/gelap) agar terbaca di latar putih */
+        text-align: center;
+    }
+    
+    .profile-info h2 {
+        color: var(--secondary-color); /* Ubah warna kembali ke warna gelap */
+        text-shadow: none; /* Hapus bayangan teks */
+    }
+
+    .profile-info p {
+        color: var(--text-color); /* Ubah warna kembali ke warna gelap */
+        text-shadow: none; /* Hapus bayangan teks */
+    }
+
+    .profile-pic {
+        width: 150px; /* Kecilkan foto profil */
+        height: 150px;
+    }
+}
+
+/* --- Gaya untuk Foto di Header --- */
+.header-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    border: 4px solid #fff; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    object-fit: cover; 
+    margin-bottom: 20px; 
+}
+
+/* --- Gaya untuk Footer & Ikon Sosial --- */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.footer-socials {
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    font-size: 2rem;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #c13584; 
+}
+
+/* --- Efek Interaktif pada Kartu Profil --- */
+.section#tentang-saya {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; 
+}
+
+.section#tentang-saya:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.profile-pic {
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.7); 
+}
+
+/* --- Gaya untuk Teks di Bagian Tentang Saya (Hanya Berlaku jika .section#tentang-saya TIDAK memiliki background solid) --- */
+/* Karena kita menambahkan background solid di HP, properti ini mungkin tidak lagi diperlukan,
+   tapi kita biarkan untuk tampilan Desktop/Tablet agar background image tetap dipakai. */
+.profile-info h2 {
+    color: #fff; 
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8); 
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+
+.profile-info p {
+    color: #fff; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6); 
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.sorotan {
+    font-style: italic; 
+    color: #000; 
+    font-weight: bold; 
+}
+
+/* --- Backgrounds Section --- */
+#tentang-saya {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('assets/pemandangan.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#terbaru {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('assets/awan.jpg');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+
+#jurnal-blog {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    background-size: cover;
+}
+
+#galeri-foto {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('assets/bukit.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#kontak-section {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
