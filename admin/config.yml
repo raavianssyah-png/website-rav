@@ -1,0 +1,24 @@
+# FILE: admin/config.yml
+
+# 1. Back-end (Autentikasi & Penyimpanan)
+backend:
+  name: git-gateway # Menggunakan Netlify Identity untuk login via GitHub
+  branch: main # Ganti dengan nama branch GitHub utama Anda (biasanya 'main' atau 'master')
+
+# 2. Pengaturan Media (Gambar)
+media_folder: "assets/uploads" # Folder di root tempat gambar akan disimpan
+public_folder: "/assets/uploads" # URL publik untuk gambar tersebut
+
+# 3. Kumpulan (Collections) - Menu di Dashboard
+collections:
+  - name: "posts"
+    label: "Jurnal Pendakian"
+    folder: "_posts" # CMS akan menyimpan file di folder ini
+    create: true # Memungkinkan Anda membuat postingan baru
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Format nama file (YYYY-MM-DD-judul-jurnal.md)
+    fields: # Definisi kolom input di form "Tambah Jurnal"
+      - {label: "Judul Jurnal", name: "judul", widget: "string"}
+      - {label: "Tanggal Kegiatan", name: "tanggal", widget: "datetime", date_format: "DD MMMM YYYY"}
+      - {label: "Foto Utama", name: "gambar", widget: "image"}
+      - {label: "Tags (Opsional)", name: "tags", widget: "list", required: false}
+      - {label: "Isi Cerita", name: "body", widget: "markdown"}
