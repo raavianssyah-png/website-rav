@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin - Raviansyah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="login-style.css"> 
+</head>
+<body>
+    <div class="login-wrapper">
+        <form class="login-box" id="loginForm">
+            <i class="fas fa-user-shield login-icon"></i>
+            <h2>Admin Login</h2>
+            <p>Akses Khusus untuk Pengelola Konten Jurnal.</p>
+
+            <div class="input-group">
+                <label for="username">Nama Pengguna</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Kata Sandi</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Masuk</button>
+            <p class="error-message" id="errorMsg"></p>
+            
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
