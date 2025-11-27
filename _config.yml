@@ -17,4 +17,6 @@ exclude:
   - admin.html 
   - dashboard-style.css
   - dashboard.js
+include:
+  - admin/
   - admin/
