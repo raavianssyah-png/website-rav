@@ -16,7 +16,7 @@ body {
     background-size: cover;          
     background-repeat: no-repeat;    
     background-attachment: fixed;    
-    background-position: center center;
+    background-position: center center; 
     
     background-color: #ecf0f1; 
     color: var(--text-color);
@@ -370,7 +370,6 @@ footer {
 }
 
 
-/* --- Media Query untuk Tablet/Desktop (>= 768px) --- */
 @media (min-width: 768px) {
     .profile-card {
         flex-direction: row;
@@ -381,98 +380,6 @@ footer {
 
     .profile-info {
         text-align: left; 
-    }
-}
-
-/* --- Media Query untuk HP (<= 767px) --- */
-@media (max-width: 767px) {
-    /* 1. PERBAIKAN NAVIGASI (Horizontal & Rapat) */
-    .navbar {
-        flex-direction: row; 
-        align-items: center;
-        padding: 1rem 1rem; 
-        height: auto;
-    }
-
-    .nav-brand {
-        font-size: 1.2rem; 
-        margin-right: 0.5rem; 
-    }
-
-    .nav-menu {
-        display: flex;
-        flex-direction: row; 
-        gap: 0.5rem; 
-        flex-shrink: 1; 
-        flex-grow: 0;
-    }
-
-    .nav-menu li {
-        width: auto;
-        text-align: center;
-        padding: 0; 
-        background-color: transparent; 
-        border-top: none; 
-    }
-    
-    .nav-menu li a {
-        display: block;
-        padding: 0.5rem 0.25rem; 
-        font-size: 0.8rem; /* Font kecil agar semua menu muat */
-    }
-
-    /* 2. PERBAIKAN HEADER/HERO SECTION */
-    .header {
-        /* Tambahkan padding agar ada jarak dari navigasi di atas */
-        padding: 8rem 1rem 4rem 1rem; 
-        min-height: auto; 
-    }
-
-    .header-content {
-        /* Tambahkan padding agar teks tidak terlalu dekat ke tepi layar */
-        padding: 1rem; 
-    }
-
-    .header-content h1,
-    .header-content h1 {
-        font-size: 2rem; 
-    }
-
-    .header-content p {
-        font-size: 1rem; 
-    }
-
-    /* 3. PERBAIKAN BAGIAN TENTANG SAYA/PROFIL */
-    .section {
-        /* Tambahkan latar belakang solid agar teks mudah dibaca di atas gambar latar belakang body */
-        background-color: rgba(255, 255, 255, 0.95); /* Putih transparan agar background body tetap terlihat samar */
-    }
-
-    .profile-card {
-        /* Pastikan tumpukan konten vertikal */
-        flex-direction: column; 
-        align-items: center; 
-        padding: 10px;
-    }
-
-    .profile-info {
-        /* Paksa teks kembali ke warna default (hitam/gelap) agar terbaca di latar putih */
-        text-align: center;
-    }
-    
-    .profile-info h2 {
-        color: var(--secondary-color); /* Ubah warna kembali ke warna gelap */
-        text-shadow: none; /* Hapus bayangan teks */
-    }
-
-    .profile-info p {
-        color: var(--text-color); /* Ubah warna kembali ke warna gelap */
-        text-shadow: none; /* Hapus bayangan teks */
-    }
-
-    .profile-pic {
-        width: 150px; /* Kecilkan foto profil */
-        height: 150px;
     }
 }
 
@@ -526,9 +433,7 @@ footer {
     box-shadow: 0 0 15px rgba(52, 152, 219, 0.7); 
 }
 
-/* --- Gaya untuk Teks di Bagian Tentang Saya (Hanya Berlaku jika .section#tentang-saya TIDAK memiliki background solid) --- */
-/* Karena kita menambahkan background solid di HP, properti ini mungkin tidak lagi diperlukan,
-   tapi kita biarkan untuk tampilan Desktop/Tablet agar background image tetap dipakai. */
+/* --- Gaya untuk Teks di Bagian Tentang Saya --- */
 .profile-info h2 {
     color: #fff; 
     text-shadow: 1px 1px 5px rgba(0,0,0,0.8); 
@@ -550,13 +455,13 @@ footer {
     font-weight: bold; 
 }
 
-/* --- Backgrounds Section --- */
 #tentang-saya {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('assets/pemandangan.jpg');
     background-position: center;
     background-repeat: no-repeat;
 }
 
+/* 2. PENDAKIAN TERBARU (Beranda - Bawah) */
 #terbaru {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('assets/awan.jpg');
     background-size: cover;
@@ -567,6 +472,7 @@ footer {
 #jurnal-blog {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
     background-size: cover;
+    /* ... */
 }
 
 #galeri-foto {
@@ -576,9 +482,119 @@ footer {
     background-repeat: no-repeat;
 }
 
+/* 5. HALAMAN KONTAK */
 #kontak-section {
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.whatsapp-container {
+    /* Untuk menengahkan tombol di dalam section */
+    text-align: center; 
+    margin-top: 20px;
+}
+
+.whatsapp-button {
+    /* Menggantikan gaya button formspree agar lebih terlihat seperti WhatsApp */
+    display: inline-block;
+    background-color: #25D366; /* Warna hijau WhatsApp */
+    color: white !important; /* Pastikan teks tetap putih, menimpa warna link default */
+    padding: 12px 25px;
+    border-radius: 50px; /* Bentuk pil/rounded */
+    text-decoration: none; /* Hilangkan garis bawah link */
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Gunakan gaya yang sama dengan tombol KIRIM PESAN yang lama jika Anda ingin konsisten */
+    /* Contoh: font-family: inherit; */ 
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Warna hover yang sedikit lebih gelap */
+    transform: translateY(-2px); /* Efek sedikit terangkat saat disentuh */
+}
+
+.whatsapp-button i {
+    /* Mengatur jarak antara ikon WhatsApp dan teks */
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* Opsional: Menyembunyikan gaya formulir lama jika masih ada di HTML, tapi kita sudah menghapusnya */
+.kontak-form {
+    display: none; 
+}
+
+/* Kustomisasi gaya agar sesuai dengan section #kontak-section Anda */
+#kontak-section h2 {
+    /* Jika Anda ingin warna teks di section kontak berbeda dari default,
+       Anda bisa kustomisasi di sini */
+    color: var(--secondary-color); 
+}
+#kontak-section p {
+    color: var(--text-color);
+}
+
+/* --- Gaya Kontainer untuk Kontak WhatsApp & Instagram --- */
+
+.kontak-links-container {
+    display: flex;
+    flex-wrap: wrap; /* Agar tombol turun ke bawah jika layar kecil */
+    justify-content: center;
+    gap: 15px; /* Jarak antar tombol */
+    margin-top: 30px;
+}
+
+.kontak-button {
+    /* Gaya Dasar untuk Kedua Tombol */
+    display: inline-flex; /* Agar ikon dan teks sejajar */
+    align-items: center;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.05em;
+    font-weight: bold;
+    color: white !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    min-width: 250px; /* Lebar minimum agar terlihat rapi */
+    justify-content: center;
+}
+
+.kontak-button:hover {
+    transform: translateY(-3px);
+}
+
+.kontak-button i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* --- Gaya Spesifik WhatsApp --- */
+.whatsapp-button-style {
+    background-color: #25D366; /* Hijau WhatsApp */
+}
+
+.whatsapp-button-style:hover {
+    background-color: #128C7E; 
+}
+
+/* --- Gaya Spesifik Instagram --- */
+.instagram-button-style {
+    /* Gradien Instagram yang khas */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.instagram-button-style:hover {
+    box-shadow: 0 6px 15px rgba(222, 100, 150, 0.5); /* Shadow khas Instagram */
+}
+
+/* Sembunyikan gaya kontak-form lama jika masih ada */
+.kontak-form {
+    display: none;
+}
+/* BARIS INI KOSONG, TIDAK ADA KURUNG KURAWAL TAMBAHAN */
